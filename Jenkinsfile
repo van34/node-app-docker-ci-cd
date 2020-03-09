@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('sonar analyse ') {
+      steps {
+        withSonarQubeEnv(installationName: 'sonar ', credentialsId: 'sonarsecret')
+      }
+    }
+
   }
 }
